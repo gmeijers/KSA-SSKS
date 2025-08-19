@@ -23,6 +23,7 @@ Everyone is free to use, modify, or build upon this project however they please.
 ## Notes
 
 - This is my first attempt at modding KSA, so there’s probably a much better way to implement this.
+- KSA doesn't seem to play nice with smaller celestial bodies. Moons like Minmus, ~~Dres~~, and Ike look pretty awkward at the moment.
 - I can’t be bothered to polish it more right now, but I’m **very open to feedback, suggestions, or pull requests**.  
 - Use this mod however you like — no restrictions.  
 
