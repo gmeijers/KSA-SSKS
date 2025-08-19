@@ -11,19 +11,15 @@ Everyone is free to use, modify, or build upon this project however they please.
 
 ⚠️ **Important:** Make a backup first!
 
-1. Navigate to your Kitten Space Agency installation directory.
-2. Back up the following files (in case you want to restore later):
-   - `Content/Core/Astronomicals.xml`
-   - `Content/Core/SolSystem.xml`
-3. Copy all files from this mod into the **main directory** of Kitten Space Agency.
-4. Launch the game and enjoy exploring the Kerbol System at Sol scale!
+1. Copy all files from this mod into the **main directory** of Kitten Space Agency.
+2. Launch the game and enjoy exploring the Kerbol System at Sol scale!
 
 ---
 
 ## Notes
 
 - This is my first attempt at modding KSA, so there’s probably a much better way to implement this.
-- KSA doesn't seem to play nice with smaller celestial bodies. Moons like Minmus, ~~Dres~~, and Ike look pretty awkward at the moment.
+- Still need to create a mesh to make smaller bodies look good. Moons like Minmus, ~~Dres~~, and Ike look pretty awkward at the moment.
 - I can’t be bothered to polish it more right now, but I’m **very open to feedback, suggestions, or pull requests**.  
 - Use this mod however you like — no restrictions.  
 - This is more of a proof of concept than anything. Many bodies don't look nice, there are no terrain features yet and don't even try landing.
