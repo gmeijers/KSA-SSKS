@@ -3,7 +3,7 @@
 This is my very first mod for **Kitten Space Agency**.  
 It replaces the default Solar System with the **Kerbol System** from Kerbal Space Program – but scaled to **our (Sol) scale**.  
 
-Everyone is free to use, modify, or build upon this project however they please. 🚀
+Everyone is free to use, modify, or build upon this project however they please.
 
 ---
 
@@ -27,6 +27,10 @@ Everyone is free to use, modify, or build upon this project however they please.
 - Use this mod however you like — no restrictions.  
 
 ---
+
+## Credits
+
+All textures come from https://github.com/Kopernicus/kittopia-dumps.
 
 ## Disclaimer
 
