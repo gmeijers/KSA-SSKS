@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<System Id="Sol">
-    <DisplayName Value="Solar System" />
+<System Id="Kerbol">
+    <DisplayName Value="Sol Scale Kerbol System" />
     
     <!-- generated and cached using the 'textures summarize' in game and used for VRAM estimates -->
     <VesselTextures Size="184 MB">
@@ -28,9 +28,15 @@
         <Texture Width="1" Height="1" Count="2" Size="8 B" />
     </UnscaledTextures>
     
-    <LoadFromLibrary Id="Sol"/>
+    <StellarBody Id="Kerbol">
+        <MeanRadius Km="696342" />
+        <Mass Suns="1" />
+        <Diffuse Path="Textures/Sol_Diffuse.jpg" Category="Terrain"/>
+        <Color R="1" G="1" B="1" />
+        <Sunlight R="9" G="9" B="9" />
+    </StellarBody>
 
-    <TerrestrialBody Id="Moho" Parent="Sol">
+    <TerrestrialBody Id="Moho" Parent="Kerbol">
         <MeshCollection Id="Default"/>
         <SemiMajorAxis Au="0.39" />
         <Inclination Degrees="7.00487" />
@@ -50,7 +56,7 @@
         <Period Days="58" Hours="15" Minutes="30" Seconds="14"/>
     </TerrestrialBody>
 
-    <AtmosphericBody Id="Eve" Parent="Sol">
+    <AtmosphericBody Id="Eve" Parent="Kerbol">
         <MeshCollection Id="Default"/>
         <SemiMajorAxis Au="0.72" />
         <Inclination Degrees="3.39458" />
@@ -128,7 +134,7 @@
         <Mass Pg="1.4762" />
     </TerrestrialBody>
 
-    <AtmosphericBody Id="Kerbin" Parent="Sol">
+    <AtmosphericBody Id="Kerbin" Parent="Kerbol">
         <MeshCollection Id="Default"/>
         <SemiMajorAxis Au="1" />
         <Inclination Degrees="0.00005" />
@@ -506,7 +512,7 @@
     </TerrestrialBody>
 
 
-    <AtmosphericBody Id="Duna" Parent="Sol">
+    <AtmosphericBody Id="Duna" Parent="Kerbol">
         <MeshCollection Id="Default"/>
         <SemiMajorAxis Au="1.523679" />
         <Inclination Degrees="1.85061" />
@@ -713,7 +719,7 @@
         <Mass Pg="10.659" />
     </TerrestrialBody>
 
-    <TerrestrialBody Id="Some rock idk" Parent="Sol">
+    <TerrestrialBody Id="Some rock idk" Parent="Kerbol">
         <SemiMajorAxis Au="2.769" />
         <Inclination Degrees="10.594" />
         <Eccentricity Value="0.0758" />
@@ -731,7 +737,7 @@
         <Color R="0.72" G="0.72" B="0.72" />
     </TerrestrialBody>
 
-    <AtmosphericBody Id="Jool" Parent="Sol">	
+    <AtmosphericBody Id="Jool" Parent="Kerbol">	
         <MeshCollection Id="Default"/>
         <SemiMajorAxis Au="5.2044" />
         <Inclination Degrees="1.30530" />
@@ -901,7 +907,7 @@
         <Color R="1.0" G="0.2" B="0.1" />
     </AtmosphericBody>
 
-    <TerrestrialBody Id="Eeloo" Parent="Sol">
+    <TerrestrialBody Id="Eeloo" Parent="Kerbol">
         <MeshCollection Id="Default"/>
         <SemiMajorAxis Au="39.48" />
         <Inclination Degrees="17.14175" />
@@ -919,11 +925,6 @@
         <Mass Zg="13.03" />
         <Color R="0.95" G="0.78" B="0.64" />
     </TerrestrialBody>
-
-    <LoadFromLibrary Id="Earth" Parent="Sol"/>
-    <LoadFromLibrary Id="Luna" Parent="Earth"/>
-    
-    <LoadFromLibrary Id="Gemini7" Parent="Earth" />
     
     <LoadFromLibrary Id="Rocket" Parent="Kerbin" />
 
