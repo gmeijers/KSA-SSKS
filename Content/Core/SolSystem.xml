@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System Id="Sol">
+    <DisplayName Value="Solar System" />
+    
+    <!-- generated and cached using the 'textures summarize' in game and used for VRAM estimates -->
+    <VesselTextures Size="184 MB">
+        <Texture Width="4096" Height="4096" Count="12" Size="181 MB" />
+        <Texture Width="512" Height="512" Count="3" Size="3 MB" />
+    </VesselTextures>
+    <TerrainTextures Size="4 GB">
+        <Texture Width="16384" Height="8192" Count="7" Size="1 GB" />
+        <Texture Width="10800" Height="5400" Count="1" Size="37 MB" />
+        <Texture Width="8192" Height="4096" Count="3" Size="277 MB" />
+        <Texture Width="4096" Height="4096" Count="34" Size="2 GB" />
+        <Texture Width="5761" Height="2880" Count="1" Size="63 MB" />
+        <Texture Width="5760" Height="2880" Count="1" Size="11 MB" />
+        <Texture Width="4096" Height="2048" Count="7" Size="171 MB" />
+        <Texture Width="2048" Height="2048" Count="1" Size="16 MB" />
+        <Texture Width="2048" Height="1024" Count="6" Size="48 MB" />
+        <Texture Width="1264" Height="632" Count="2" Size="6 MB" />
+        <Texture Width="8" Height="8" Count="2" Size="512 B" />
+    </TerrainTextures>
+    <UnscaledTextures Size="8 MB">
+        <Texture Width="128" Height="8192" Count="1" Size="4 MB" />
+        <Texture Width="1024" Height="1024" Count="1" Size="4 MB" />
+        <Texture Width="64" Height="64" Count="1" Size="16 KB" />
+        <Texture Width="8" Height="8" Count="3" Size="768 B" />
+        <Texture Width="1" Height="1" Count="2" Size="8 B" />
+    </UnscaledTextures>
+    
+    <LoadFromLibrary Id="Sol"/>
+
+    <TerrestrialBody Id="Moho" Parent="Sol">
+        <MeshCollection Id="Default"/>
+        <SemiMajorAxis Au="0.39" />
+        <Inclination Degrees="7.00487" />
+        <Eccentricity Value="0.2056" />
+        <LongitudeOfAscendingNode Degrees="48.331" />
+        <ArgumentOfPeriapsis Degrees="29.124" />
+        <MeanAnomalyAtEpoch Degrees="252.25084" />
+        <MeanRadius Km="2439.7" />
+        <Diffuse Path="Textures/KerbolSystem/ColorMaps/Moho_Color.dds" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Moho_Normal.png" Category="Terrain"/>
+        <Height Path="Textures/KerbolSystem/HeightMaps/Moho_Height.dds" Category="Terrain">
+            <Maximum Km="20"/>
+            <Maximum Km="0"/>
+        </Height>
+        <Mass Zg="330.11" />
+        <Color R="1" G="1" B="1" />
+        <Period Days="58" Hours="15" Minutes="30" Seconds="14"/>
+    </TerrestrialBody>
+
+    <AtmosphericBody Id="Eve" Parent="Sol">
+        <MeshCollection Id="Default"/>
+        <SemiMajorAxis Au="0.72" />
+        <Inclination Degrees="3.39458" />
+        <Eccentricity Value="0.0068" />
+        <LongitudeOfAscendingNode Degrees="76.680" />
+        <ArgumentOfPeriapsis Degrees="54.891" />
+        <MeanAnomalyAtEpoch Degrees="181.97973" />
+        <MeanRadius Km="6051.8" />
+        <Diffuse Id="EveDiffuse" Path="Textures/KerbolSystem/ColorMaps/Eve_Color.dds" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Eve_Normal.png" Power="0.2" Category="Terrain"/>
+        <Height Path="Textures/KerbolSystem/HeightMaps/Eve_Height.dds" Category="Terrain">
+            <Maximum Km="40"/>
+            <Minimum Km="-2"/>
+        </Height>
+        <Mass Earths="0.815" />
+        <Color R="1.0" G="0.87" B="0.68" />
+        <Retrograde Value="true"/>
+        <Period Days="243"/>
+        <AxialTilt Degrees="177.4" />
+        <AxialAlignment Degrees="0" />
+        <Ocean>
+            <Level Km="0" />
+            <MeshCollection Id="Optimized"/>
+            <Waves>
+                <Count Value="64" />  <!-- a bit high and slow, but detailed enough to test shading/geometry -->
+                <Length M="100" />
+                <Amplitude Value="0.01" />
+                <Speed Value="1" />
+                <LengthPersistence Value="0.93" />
+                <AmplitudePersistence Value="0.975" />
+                <SpeedPersistence Value="1.01" />
+            </Waves>
+            <Color R="0.0901711" G="0.2208759" B="0.31672597" />
+            <TransparencyDepth M="1000" />
+        </Ocean>
+        <Atmosphere>
+            <Visual>
+                <RayleighScattering>
+                <Coefficients R="0.010164952309956612" G="0.0017078347497573156" B="0.017139341502007476" />
+                <ScaleHeight Km="70" />
+                </RayleighScattering>
+                <MieScattering>
+                <Coefficients R="3.38492581975984E-11" G="9.041547028799431E-11" B="2.6062822546719228E-11" />
+                <ScaleHeight Km="0.0010000000474974513" />
+                <PhaseFunctionAsymmetry X="0.30000001192092896" Y="0.20000000298023224" Z="0.10000000149011612" />
+                <AbsorptionMultiplier Value="0" />
+                </MieScattering>
+                <Ozone>
+                <Coefficients R="9.022429924380184E-12" G="9.390008814171062E-11" B="3.31868870529802E-11" />
+                <Altitude Km="0" />
+                <Extent Km="90" />
+                </Ozone>
+            </Visual>
+            <Physical>
+                <SeaLevelPressure Atm="92.0"/>
+                <SeaLevelDensity KgPerM3="65.0"/>
+                <ScaleHeight Km="18" />
+            </Physical>
+        </Atmosphere>
+    </AtmosphericBody>
+    <TerrestrialBody Id="Gilly" Parent="Eve">
+        <SemiMajorAxis Km="23463.2" />
+        <Inclination Degrees="1.788" />
+        <Eccentricity Value="0.00033" />
+        <LongitudeOfAscendingNode Degrees="23.264" />
+        <ArgumentOfPeriapsis Degrees="79.465" />
+        <MeanAnomalyAtEpoch Degrees="53.23" />
+        <MeanRadius Km="6.2" />
+        <Diffuse Id="GillyDiffuse" Path="Textures/KerbolSystem/ColorMaps/Gilly_Color.dds" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Gilly_Normal.png" Category="Terrain"/>
+        <Height Path="Textures/KerbolSystem/HeightMaps/Gilly_Height.dds" Category="Terrain">
+            <Maximum Km="63"/>
+            <Minimum Km="0"/>
+        </Height>
+        <Mass Pg="1.4762" />
+    </TerrestrialBody>
+
+    <AtmosphericBody Id="Kerbin" Parent="Sol">
+        <MeshCollection Id="Default"/>
+        <SemiMajorAxis Au="1" />
+        <Inclination Degrees="0.00005" />
+        <Eccentricity Value="0.0167" />
+        <LongitudeOfAscendingNode Degrees="-11.261" />
+        <ArgumentOfPeriapsis Degrees="114.207" />
+        <Diffuse Path="Textures/KerbolSystem/ColorMaps/Kerbin_Color.dds" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Kerbin_Normal.png" Category="Terrain"/>
+        <Height Path="Textures/KerbolSystem/HeightMaps/Kerbin_Height.dds" Category="Terrain">
+            <Maximum Km="40"/>
+            <Minimum Km="-.1"/>
+        </Height>
+
+        <MeanAnomalyAtEpoch Degrees="100" />
+        <MeanRadius Km="6371" />
+        <Mass Earths="1" />
+        <Color R="0.11" G="0.31" B="0.415" />
+        <Period Days="1"/>
+        <AxialTilt Degrees="23.44" />
+        <AxialAlignment Degrees="0" />
+        <Atmosphere>
+            <Visual>
+                <RayleighScattering>
+                    <Coefficients R="2.9e-3" G="6.75e-3" B="1.655e-2" />
+                    <ScaleHeight Km="16"/>
+                </RayleighScattering>
+                <MieScattering>
+                    <Coefficients R="1e-3" G="1e-3" B="1e-3"/>
+                    <ScaleHeight Km="2.4"/>
+                    <PhaseFunctionAsymmetry X="0.83" Y="0.83" Z="0.83" />
+                </MieScattering>
+                <Ozone>
+                    <Coefficients R="0.0002859878690418894" G="0.0006926816512870985" B="3.0051264697921836E-05" />
+                    <Altitude Km="45" />
+                    <Extent Km="10" />
+                </Ozone>
+            </Visual>
+            <Physical>
+                <SeaLevelPressure Atm="1.0"/>
+                <SeaLevelDensity KgPerM3="1.225"/>
+                <ScaleHeight Km="8"/>
+            </Physical>
+        </Atmosphere>
+        <Ocean>
+            <Level Km="0" />
+            <MeshCollection Id="Optimized"/>
+            <Waves>
+                <Count Value="64" />  <!-- a bit high and slow, but detailed enough to test shading/geometry -->
+                <Length M="100" />
+                <Amplitude Value="0.05" />
+                <Speed Value="1.5" />
+                <LengthPersistence Value="0.93" />
+                <AmplitudePersistence Value="0.975" />
+                <SpeedPersistence Value="1.01" />
+            </Waves>
+            <Color R="0.0901711" G="0.2208759" B="0.31672597" />
+            <TransparencyDepth M="1000" />
+        </Ocean>
+        <Clouds>
+            <OrbitTransitionStartAltitude Km="500.0"/>
+            <OrbitTransitionEndAltitude Km="1500.0"/>
+            <Layer Id="EarthClouds">
+                <RotationSpeed X="0" Y="0" Z="-20" />
+                <Texture Id="Textures/Clouds/compressed/Earth_clouds_tile_mask.dds" Path="Textures/Clouds/compressed/Earth_clouds_tile_mask.dds" Category="Terrain"/>
+                <Detail>
+                    <Texture Path="Textures/Clouds/CloudDetail2048.png" Category="Terrain"/>
+                <Size Km ="400"/>
+            </Detail>
+            <TwoDimensionalCloud>
+                <Color R="1.0" G="1.0" B="1.0" />
+                <Lambertian Value="0.65" />
+            </TwoDimensionalCloud>
+            <Raymarching>
+                <Step Scale="0.005">
+                    <Size Km="0.07"/>
+                    <MaxSize Km="1.5"/>
+                </Step>
+                <LightDistance Km="2.4"/>
+                <LightSamples Value="8"/>
+            </Raymarching>
+            <Noise>
+                <ScrollSpeed Value="5"/>
+            </Noise>
+            <CloudType Name="Stratus">
+                <StartAltitude Km="4.0"/>
+                <Height Km="1.2"/>
+                <Density Value="0.002"/>
+                <NoiseScale Km="4.0"/>
+                <EdgeSharpness Value="0.87"/>
+                <MultipleScatteringBrightness Value="0.7"/>
+                <CloudShape InterpolateShapes="true">
+                    <ShapeCurve>
+                        <SplinePoint>
+                            <Key Value="0.0"/>
+                            <Value Value="0.0"/>
+                            <InTangent Value="1.633945"/>
+                            <OutTangent Value="1.633945"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="0.1140957"/>
+                            <Value Value="0.8506892"/>
+                            <InTangent Value="0.06669102"/>
+                            <OutTangent Value="0.261398"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="0.3686106"/>
+                            <Value Value="0.9575245"/>
+                            <InTangent Value="0.0"/>
+                            <OutTangent Value="0.0"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="1.0"/>
+                            <Value Value="0.0"/>
+                            <InTangent Value="-0.369256"/>
+                            <OutTangent Value="-0.5550035"/>
+                        </SplinePoint>
+                    </ShapeCurve>
+                </CloudShape>
+            </CloudType>
+            <CloudType Name="Cumulus">
+                <StartAltitude Km="4.0"/>
+                <Height Km="2.7"/>
+                <Density Value="0.012"/>
+                <NoiseScale Km="2.3"/>
+                <EdgeSharpness Value="0.96"/>
+                <MultipleScatteringBrightness Value="0.8"/>
+                <CloudShape InterpolateShapes="true">
+                    <ShapeCurve>
+                        <SplinePoint>
+                            <Key Value="0.0"/>
+                            <Value Value="0.0"/>
+                            <InTangent Value="1.633945"/>
+                            <OutTangent Value="1.633945"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="0.08695792"/>
+                            <Value Value="0.976166"/>
+                            <InTangent Value="0.06669102"/>
+                            <OutTangent Value="0.04846065"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="1.0"/>
+                            <Value Value="0.0"/>
+                            <InTangent Value="-0.7966601"/>
+                            <OutTangent Value="-0.5550035"/>
+                        </SplinePoint>
+                    </ShapeCurve>
+                </CloudShape>
+            </CloudType>
+            <CloudType Name="Cumulus Congestus 1">
+                <StartAltitude Km="4.0"/>
+                <Height Km="4.7"/>
+                <Density Value="0.012"/>
+                <NoiseScale Km="3.0"/>
+                <EdgeSharpness Value="0.96"/>
+                <CloudShape InterpolateShapes="true">
+                    <ShapeCurve>
+                        <SplinePoint>
+                            <Key Value="0.0"/>
+                            <Value Value="0.0"/>
+                            <InTangent Value="1.633945"/>
+                            <OutTangent Value="1.633945"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="0.08695792"/>
+                            <Value Value="0.976166"/>
+                            <InTangent Value="0.06669102"/>
+                            <OutTangent Value="0.04846065"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="0.4343985"/>
+                            <Value Value="0.6765829"/>
+                            <InTangent Value="-1.224023"/>
+                            <OutTangent Value="-1.224023"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="0.8816288"/>
+                            <Value Value="0.3897246"/>
+                            <InTangent Value="-1.164106"/>
+                            <OutTangent Value="-1.164106"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="1.0"/>
+                            <Value Value="0.0"/>
+                            <InTangent Value="-0.7966601"/>
+                            <OutTangent Value="-0.5550035"/>
+                        </SplinePoint>
+                    </ShapeCurve>
+                </CloudShape>
+            </CloudType>
+            <CloudType Name="Cumulus Congestus 2">
+                <StartAltitude Km="4.0"/>
+                <Height Km="6.7"/>
+                <Density Value="0.006"/>
+                <NoiseScale Km="3.0"/>
+                <EdgeSharpness Value="0.96"/>
+                <CloudShape InterpolateShapes="false">
+                    <ShapeCurve>
+                        <SplinePoint>
+                            <Key Value="0.0"/>
+                            <Value Value="0.0"/>
+                            <InTangent Value="1.633945"/>
+                            <OutTangent Value="1.633945"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="0.09431168"/>
+                            <Value Value="0.9640306"/>
+                            <InTangent Value="0.06669102"/>
+                            <OutTangent Value="-0.8954304"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="0.2904161"/>
+                            <Value Value="0.8003764"/>
+                            <InTangent Value="0.2357683"/>
+                            <OutTangent Value="0.2357683"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="0.59456"/>
+                            <Value Value="0.7429472"/>
+                            <InTangent Value="-0.001872113"/>
+                            <OutTangent Value="-0.001872113"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="0.734686"/>
+                            <Value Value="0.7428927"/>
+                            <InTangent Value="-3.4198"/>
+                            <OutTangent Value="-1.176937"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="1.0"/>
+                            <Value Value="0.0"/>
+                            <InTangent Value="-0.8304251"/>
+                            <OutTangent Value="-0.5550035"/>
+                        </SplinePoint>
+                    </ShapeCurve>
+                </CloudShape>
+            </CloudType>
+            <CloudType Name="Cumulus Congestus 3">
+                <StartAltitude Km="4.0"/>
+                <Height Km="6.7"/>
+                <Density Value="0.006"/>
+                <NoiseScale Km="3.0"/>
+                <EdgeSharpness Value="0.96"/>
+                <CloudShape InterpolateShapes="false">
+                    <ShapeCurve>
+                        <SplinePoint>
+                            <Key Value="0.0"/>
+                            <Value Value="0.0"/>
+                            <InTangent Value="1.633945"/>
+                            <OutTangent Value="1.633945"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="0.09431168"/>
+                            <Value Value="0.9640306"/>
+                            <InTangent Value="0.06669102"/>
+                            <OutTangent Value="-0.8954304"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="0.2904161"/>
+                            <Value Value="0.8003764"/>
+                            <InTangent Value="0.2357683"/>
+                            <OutTangent Value="0.2357683"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="0.734686"/>
+                            <Value Value="0.7428927"/>
+                            <InTangent Value="-3.4198"/>
+                            <OutTangent Value="-1.176937"/>
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="1.0"/>
+                            <Value Value="0.0"/>
+                            <InTangent Value="-0.8304251"/>
+                            <OutTangent Value="-0.5550035"/>
+                        </SplinePoint>
+                    </ShapeCurve>
+                </CloudShape>
+            </CloudType>
+        </Layer>
+        <Layer Id="EarthClouds2">
+            <RotationSpeed X="0" Y="0" Z="-30" />
+            <Texture Id="Textures/Clouds/compressed/Earth_clouds_placeholder_top_layer.dds" Path="Textures/Clouds/compressed/Earth_clouds_placeholder_top_layer.dds" Category="Terrain"/>
+                <Detail>
+                    <Texture Path="Textures/Clouds/compressed/CirroStratusDetail.dds" Category="Terrain"/>
+                    <Size Km ="400"/>
+                </Detail>
+                <Color R="1.0" G="1.0" B="1.0" />
+                <TwoDimensionalCloud>
+                    <Color R="1.0" G="1.0" B="1.0" />
+                    <Lambertian Value="0.65" />
+                </TwoDimensionalCloud>
+                <Raymarching>
+                    <Step Scale="0.0044">
+                        <Size Km="0.11"/>
+                        <MaxSize Km="4.5"/>
+                    </Step>
+                    <LightDistance Km="2.8"/>
+                    <LightSamples Value="4"/>
+                </Raymarching>
+                <Noise>
+                    <ScrollSpeed Value="5"/>
+                </Noise>
+                <CloudType Name="CirroStratus">
+                    <StartAltitude Km="15.0"/>
+                    <Height Km="1.2"/>
+                    <Density Value="0.001"/>
+                    <NoiseScale Km="4.0"/>
+                    <EdgeSharpness Value="0.5"/>
+                    <MultipleScatteringBrightness Value="0.7"/>
+                    <CloudShape InterpolateShapes="true">
+                        <ShapeCurve>
+                            <SplinePoint>
+                                <Key Value="0.0"/>
+                                <Value Value="0.0"/>
+                                <InTangent Value="2.0"/>
+                                <OutTangent Value="2.0"/>
+                            </SplinePoint>
+                            <SplinePoint>
+                                <Key Value="0.5"/>
+                                <Value Value="1.0"/>
+                                <InTangent Value="0.0"/>
+                                <OutTangent Value="0.0"/>
+                            </SplinePoint>
+                            <SplinePoint>
+                                <Key Value="1.0"/>
+                                <Value Value="0.0"/>
+                                <InTangent Value="-2.0"/>
+                                <OutTangent Value="-2.0"/>
+                            </SplinePoint>
+                        </ShapeCurve>
+                    </CloudShape>
+                </CloudType>
+            </Layer>
+        </Clouds>
+    </AtmosphericBody>
+    <TerrestrialBody Id="Mun" Parent="Kerbin">
+        <MeshCollection Id="Default"/>
+        <SemiMajorAxis Km="384400" />
+        <Inclination Degrees="18.28" />
+        <Eccentricity Value="0.0549" />
+        <LongitudeOfAscendingNode Degrees="90" />
+        <ArgumentOfPeriapsis Degrees="318.15" />
+        <Diffuse Path="Textures/KerbolSystem/ColorMaps/Mun_Color.dds" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Mun_Normal.png" Category="Terrain"/>
+        <Height Path="Textures/KerbolSystem/HeightMaps/Mun_Height.dds" Category="Terrain">
+            <Maximum Km="40"/>
+            <Minimum Km="0"/>
+        </Height>
+        <MeanAnomalyAtEpoch Degrees="0" />
+        <MeanRadius Km="1737.1" />
+        <Mass Lunars="1" />
+        <Period Days="27" Hours="7" Minutes="12"/>
+        <AxialTilt Degrees="6.68" />
+        <AxialAlignment Degrees="0" />
+    </TerrestrialBody>
+    <TerrestrialBody Id="Minmus" Parent="Kerbin">
+        <MeshCollection Id="Default"/>
+        <SemiMajorAxis Km="1505567" />
+        <Inclination Degrees="14" />
+        <Eccentricity Value="0" />
+        <LongitudeOfAscendingNode Degrees="60" />
+        <ArgumentOfPeriapsis Degrees="0" />
+        <Diffuse Path="Textures/KerbolSystem/ColorMaps/Minmus_Color.dds" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Minmus_Normal.dds" Category="Terrain"/>
+        <Height Path="Textures/KerbolSystem/HeightMaps/Minmus_Height.dds" Category="Terrain">
+            <Maximum Km="50"/>
+            <Minimum Km="0"/>
+        </Height>
+        <MeanAnomalyAtEpoch Degrees="0" />
+        <MeanRadius Km="521.1" />
+        <Mass Lunars="0.1" />
+        <Period Days="211" Hours="14" Minutes="39"/>
+        <AxialTilt Degrees="0" />
+        <AxialAlignment Degrees="0" />
+    </TerrestrialBody>
+
+
+    <AtmosphericBody Id="Duna" Parent="Sol">
+        <MeshCollection Id="Default"/>
+        <SemiMajorAxis Au="1.523679" />
+        <Inclination Degrees="1.85061" />
+        <Eccentricity Value="0.0934" />
+        <LongitudeOfAscendingNode Degrees="49.558" />
+        <ArgumentOfPeriapsis Degrees="286.537" />
+        <Diffuse Path="Textures/KerbolSystem/ColorMaps/Duna_Color.dds" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Duna_Normal.png" Power="0.1" Category="Terrain"/>
+        <Height Path="Textures/KerbolSystem/HeightMaps/Duna_Height.dds" Category="Terrain">
+            <Maximum Km="50"/>
+            <Minimum Km="0"/>
+        </Height>
+        <MeanAnomalyAtEpoch Degrees="355.453" />
+        <MeanRadius Km="3389.5" />
+        <Mass Zg="641.71" />
+        <Color R="1.0" G="0.27" B="0.0" />
+        <Period Days="1" Minutes="37" Seconds="22"/>
+        <AxialTilt Degrees="25.19" />
+        <AxialAlignment Degrees="0" />
+        <Atmosphere>
+            <Visual>
+                <RayleighScattering>
+                    <Coefficients R="0.00705758097024072" G="0.005894684206252668" B="0.003929789369254173" />
+                    <ScaleHeight Km="11" />
+                </RayleighScattering>
+                <MieScattering>
+                    <Coefficients R="0.002309401186449168" G="0.002309401186449168" B="0.002309401186449168" />
+                    <ScaleHeight Km="6" />
+                    <PhaseFunctionAsymmetry X="0.6299999952316284" Y="0.699999988079071" Z="0.7300000190734863" />
+                    <AbsorptionMultiplier Value="7" />
+                </MieScattering>
+                <Ozone>
+                    <Coefficients R="0" G="0" B="0" />
+                    <Altitude Km="0" />
+                    <Extent Km="0" />
+                </Ozone>
+            </Visual>
+            <Physical>
+                <SeaLevelPressure Atm="0.006"/>
+                <SeaLevelDensity KgPerM3="0.02"/>
+                <ScaleHeight Km="11" />
+            </Physical>
+        </Atmosphere>
+        <Clouds>
+            <OrbitTransitionStartAltitude Km="300" />
+            <OrbitTransitionEndAltitude Km="900" />
+            <Layer Id="MarsDustStorms">
+                <RotationSpeed X="0" Y="0" Z="-40" />
+                <Texture Id="Content/Core/Textures/Clouds/MarsDustMaskVolumetric.png" Path="Textures/Clouds/MarsDustMaskVolumetric.png" Category="Terrain">
+                    <IsVirtual>false</IsVirtual>
+                    <Manifest>
+                        <MaxSize>0</MaxSize>
+                        <MipMaps>true</MipMaps>
+                        <Format>R8G8B8A8UNorm</Format>
+                    </Manifest>
+                </Texture>
+                <Detail>
+                    <!-- Mars detail texture is a "passthrough" to use tilemask diectly as cloud type map -->
+                    <Texture Id="Content/Core/Textures/Clouds/MarsDetail.png" Path="Textures/Clouds/MarsDetail.png" Category="Terrain">
+                        <IsVirtual>false</IsVirtual>
+                        <Manifest>
+                            <MaxSize>0</MaxSize>
+                            <MipMaps>true</MipMaps>
+                            <Format>R8G8B8A8UNorm</Format>
+                        </Manifest>
+                    </Texture>
+                    <Size Km="400" />
+                </Detail>
+                <TwoDimensionalCloud>
+                    <Texture Id="Content/Core/Textures/Clouds/MarsDustMask2D.png" Path="Textures/Clouds/MarsDustMask2D.png" Category="Terrain"/>
+                    <Color R="0.24555159" G="0.17013007" B="0.11884347" />
+                    <Lambertian Value="0.20000000298023224" />
+                </TwoDimensionalCloud>
+                <Color R="0.18505341" G="0.12659632" B="0.086929" />
+                <Raymarching>
+                    <Step Scale="0.02">
+                        <Size M="300" />
+                        <MaxSize M="2000" />
+                    </Step>
+                    <LightDistance M="10000" />
+                    <LightSamples Value="2" />
+                </Raymarching>
+                <Noise>
+                    <ScrollSpeed Value="30" />
+                </Noise>
+                <CloudType Name="DiffuseDust">
+                    <StartAltitude M="0" />
+                    <Height M="25000" />
+                    <Density Value="0.0001" />
+                    <NoiseScale M="400000" />
+                    <EdgeSharpness Value="0" />
+                    <MultipleScatteringBrightness Value="1" />
+                    <CloudShape InterpolateShapes="true">
+                        <ShapeCurve>
+                            <SplinePoint>
+                                <Key Value="0" />
+                                <Value Value="1" />
+                                <InTangent Value="0" />
+                                <OutTangent Value="0" />
+                            </SplinePoint>
+                            <SplinePoint>
+                                <Key Value="0.8281016945838928" />
+                                <Value Value="0.6380000114440918" />
+                                <InTangent Value="-1.5" />
+                                <OutTangent Value="-1.5" />
+                            </SplinePoint>
+                            <SplinePoint>
+                                <Key Value="1" />
+                                <Value Value="0" />
+                                <InTangent Value="-6.57942533493042" />
+                                <OutTangent Value="0" />
+                            </SplinePoint>
+                        </ShapeCurve>
+                        <DensityCurve>
+                            <SplinePoint>
+                                <Key Value="0.0061465054750442505" />
+                                <Value Value="0.9859999418258667" />
+                                <InTangent Value="1" />
+                                <OutTangent Value="0.10253559798002243" />
+                            </SplinePoint>
+                            <SplinePoint>
+                                <Key Value="0.8144931793212891" />
+                                <Value Value="0.6079999804496765" />
+                                <InTangent Value="-1.4696658849716187" />
+                                <OutTangent Value="-1.3856849670410156" />
+                            </SplinePoint>
+                            <SplinePoint>
+                                <Key Value="1" />
+                                <Value Value="0.007999986410140991" />
+                                <InTangent Value="-2.646557092666626" />
+                                <OutTangent Value="1" />
+                            </SplinePoint>
+                        </DensityCurve>
+                    </CloudShape>
+                </CloudType>
+                <CloudType Name="StormFront">
+                    <StartAltitude M="0" />
+                    <Height M="35000" />
+                    <Density Value="0.0025" />
+                    <NoiseScale M="30000" />
+                    <EdgeSharpness Value="0.92" />
+                    <MultipleScatteringBrightness Value="0.75" />
+                    <CloudShape InterpolateShapes="true">
+                        <ShapeCurve>
+                            <SplinePoint>
+                                <Key Value="0" />
+                                <Value Value="1" />
+                                <InTangent Value="0" />
+                                <OutTangent Value="0" />
+                            </SplinePoint>
+                            <SplinePoint>
+                                <Key Value="0.5586528182029724" />
+                                <Value Value="0.7160000205039978" />
+                                <InTangent Value="-1.5" />
+                                <OutTangent Value="-1.5" />
+                            </SplinePoint>
+                            <SplinePoint>
+                                <Key Value="1" />
+                                <Value Value="0" />
+                                <InTangent Value="0" />
+                                <OutTangent Value="0" />
+                            </SplinePoint>
+                        </ShapeCurve>
+                        <DensityCurve>
+                            <SplinePoint>
+                                <Key Value="0.0" />
+                                <Value Value="1.0" />
+                                <InTangent Value="1" />
+                                <OutTangent Value="0.10253559798002243" />
+                            </SplinePoint>
+                            <SplinePoint>
+                                <Key Value="0.8144931793212891" />
+                                <Value Value="0.6079999804496765" />
+                                <InTangent Value="-1.4696658849716187" />
+                                <OutTangent Value="-1.3856849670410156" />
+                            </SplinePoint>
+                            <SplinePoint>
+                                <Key Value="1" />
+                                <Value Value="0.008" />
+                                <InTangent Value="-2.646557092666626" />
+                                <OutTangent Value="1" />
+                            </SplinePoint>
+                        </DensityCurve>
+                    </CloudShape>
+                </CloudType>
+            </Layer>
+        </Clouds>
+        
+    </AtmosphericBody>
+    <TerrestrialBody Id="Ike" Parent="Duna">
+        <SemiMajorAxis Km="9377" />
+        <Inclination Degrees="1.093" />
+        <Eccentricity Value="0.0151" />
+        <LongitudeOfAscendingNode Degrees="48.331" />
+        <ArgumentOfPeriapsis Degrees="150.057" />
+        <Diffuse Path="Textures/KerbolSystem/ColorMaps/Ike_Color.dds" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Ike_Normal.png" Category="Terrain"/>
+        <Height Path="Textures/KerbolSystem/HeightMaps/Ike_Height.dds" Category="Terrain">
+            <Maximum Km="20"/>
+            <Minimum Km="0"/>
+        </Height>
+        <MeanAnomalyAtEpoch Degrees="15.0" />
+        <MeanRadius Km="11.267" />
+        <Mass Pg="10.659" />
+    </TerrestrialBody>
+
+    <TerrestrialBody Id="Some rock idk" Parent="Sol">
+        <SemiMajorAxis Au="2.769" />
+        <Inclination Degrees="10.594" />
+        <Eccentricity Value="0.0758" />
+        <LongitudeOfAscendingNode Degrees="80.3056" />
+        <ArgumentOfPeriapsis Degrees="73.5977" />
+        <Diffuse Path="Textures/KerbolSystem/ColorMaps/Dres_Color.dds" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Dres_Normal.png" Category="Terrain"/>
+        <Height Path="Textures/KerbolSystem/HeightMaps/Dres_Height.dds" Category="Terrain">
+            <Maximum Km="20"/>
+            <Minimum Km="0"/>
+        </Height>
+        <MeanAnomalyAtEpoch Degrees="95.989" />
+        <MeanRadius Km="469.73" />
+        <Mass Zg="9.393" />
+        <Color R="0.72" G="0.72" B="0.72" />
+    </TerrestrialBody>
+
+    <AtmosphericBody Id="Jool" Parent="Sol">	
+        <MeshCollection Id="Default"/>
+        <SemiMajorAxis Au="5.2044" />
+        <Inclination Degrees="1.30530" />
+        <Eccentricity Value="0.0489" />
+        <LongitudeOfAscendingNode Degrees="100.464" />
+        <ArgumentOfPeriapsis Degrees="273.867" />
+        <MeanAnomalyAtEpoch Degrees="34.35152" />
+        <MeanRadius Km="69911" />
+        <Mass Jupiters="1" />
+        <Diffuse Path="Textures/Saturn_Diffuse.dds" Category="Terrain"/>
+        <Color R="1.0" G="0.69" B="0.36" />
+        <Period Hours="9" Minutes="55" Seconds="30"/>
+        <AxialTilt Degrees="3.13" />
+        <AxialAlignment Degrees="0" />
+        <Atmosphere>
+            <Visual>
+                <RayleighScattering>
+                <Coefficients R="0.012942237222926927" G="0.03741285435338968" B="0.005725098538188007" />
+                <ScaleHeight Km="60" />
+                </RayleighScattering>
+                <MieScattering>
+                <Coefficients R="0.0376129135534331" G="0.08220641045595833" B="0.022818862808500207" />
+                <ScaleHeight Km="100.0009765625" />
+                <PhaseFunctionAsymmetry X="0" Y="0" Z="0" />
+                <AbsorptionMultiplier Value="1" />
+                </MieScattering>
+                <Ozone>
+                <Coefficients R="0.048546497928801946" G="0.056370104483438155" B="0.04960449346293894" />
+                <Altitude Km="300" />
+                <Extent Km="119.9999771118164" />
+                </Ozone>
+            </Visual>
+            <Physical>
+                <SeaLevelPressure Atm="1.48" />
+                <SeaLevelDensity KgPerM3="5.3" />
+                <ScaleHeight Km="40" />
+            </Physical>
+        </Atmosphere>
+    </AtmosphericBody>
+    <TerrestrialBody Id="Pol" Parent="Jool">
+        <MeshCollection Id="Default"/>
+        <SemiMajorAxis Km="421700" />
+        <Inclination Degrees="0.036" />
+        <Eccentricity Value="0.0041" />
+        <LongitudeOfAscendingNode Degrees="355.8" />
+        <ArgumentOfPeriapsis Degrees="84.129" />
+        <Diffuse Path="Textures/Io_Diffuse.jpg" Category="Terrain"/>
+        <Height Path="Textures/Io_Height.jpg" Category="Terrain"/>
+        <MeanAnomalyAtEpoch Degrees="355.8" />
+        <Diffuse Path="Textures/KerbolSystem/ColorMaps/Pol_Color.dds" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Pol_Normal.png" Category="Terrain"/>
+        <Height Path="Textures/KerbolSystem/HeightMaps/Pol_Height.dds" Category="Terrain">
+            <Maximum Km="6"/>
+            <Minimum Km="0"/>
+        </Height>
+        <MeanRadius Km="1821.6" />
+        <Mass Zg="89.32" />
+        <Period Days="1" Hours="18" Minutes="27" Seconds="21"/>
+    </TerrestrialBody>
+    <TerrestrialBody Id="Vall" Parent="Jool">
+        <SemiMajorAxis Km="671100" />
+        <Inclination Degrees="0.466" />
+        <Eccentricity Value="0.0094" />
+        <LongitudeOfAscendingNode Degrees="181.4" />
+        <ArgumentOfPeriapsis Degrees="219.106" />
+        <MeanAnomalyAtEpoch Degrees="181.4" />
+        <Diffuse Path="Textures/KerbolSystem/ColorMaps/Vall_Color.dds" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Vall_Normal.png" Category="Terrain"/>
+        <Height Path="Textures/KerbolSystem/HeightMaps/Vall_Height.dds" Category="Terrain">
+            <Maximum Km="60"/>
+            <Minimum Km="0"/>
+        </Height>
+        <MeanRadius Km="1560.8" />
+        <Mass Zg="47.97" />
+        <Period Days="3" Hours="13" Minutes="13" Seconds="26"/>
+        <AxialTilt Degrees="0.1" />
+        <AxialAlignment Degrees="0" />
+    </TerrestrialBody>
+    <TerrestrialBody Id="Tylo" Parent="Jool">
+        <SemiMajorAxis Km="1070400" />
+        <Inclination Degrees="0.177" />
+        <Eccentricity Value="0.0015" />
+        <LongitudeOfAscendingNode Degrees="52.2" />
+        <ArgumentOfPeriapsis Degrees="63.552" />
+        <Diffuse Id="TyloDiffuse" Path="Textures/KerbolSystem/ColorMaps/Tylo_Color.dds" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Tylo_Normal.png" Category="Terrain"/>
+        <Height Path="Textures/KerbolSystem/HeightMaps/Tylo_Height.dds" Category="Terrain">
+            <Maximum Km="10"/>
+            <Minimum Km="0"/>
+        </Height>
+        <MeanAnomalyAtEpoch Degrees="52.2" />
+        <MeanRadius Km="2634.1" />
+        <Mass Zg="148.2" />
+        <Period Days="7" Hours="3" Minutes="43" Seconds="12"/>
+    </TerrestrialBody>
+    <TerrestrialBody Id="Bop" Parent="Jool">
+        <SemiMajorAxis Km="1882700" />
+        <Inclination Degrees="0.192" />
+        <Eccentricity Value="0.0074" />
+        <LongitudeOfAscendingNode Degrees="21.6" />
+        <ArgumentOfPeriapsis Degrees="298.848" />
+        <MeanAnomalyAtEpoch Degrees="21.6" />
+        <Diffuse Id="BopDiffuse" Path="Textures/KerbolSystem/ColorMaps/Bop_Color.dds" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Bop_Normal.png" Category="Terrain"/>
+        <Height Path="Textures/KerbolSystem/HeightMaps/Bop_Height.dds" Category="Terrain">
+            <Maximum Km="80"/>
+            <Minimum Km="0"/>
+        </Height>
+        <MeanRadius Km="2410.3" />
+        <Mass Zg="107.6" />
+        <Period Days="16" Hours="16" Minutes="32" Seconds="10"/>
+    </TerrestrialBody>
+    <AtmosphericBody Id="Laythe" Parent="Jool">
+        <SemiMajorAxis Km="181400" />
+        <Inclination Degrees="0.374" />
+        <Eccentricity Value="0.0032" />
+        <LongitudeOfAscendingNode Degrees="85.1" />
+        <ArgumentOfPeriapsis Degrees="54.1" />
+        <MeanAnomalyAtEpoch Degrees="141.6" />
+        <Diffuse Id="LaytheDiffuse" Path="Textures/KerbolSystem/ColorMaps/Laythe_Color.dds" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Laythe_Normal.png" Power="0.4" Category="Terrain"/>
+        <Height Path="Textures/KerbolSystem/HeightMaps/Laythe_Height.dds" Category="Terrain">
+            <Maximum Km="10"/>
+            <Minimum Km="-0.05"/>
+        </Height>
+        <Ocean>
+            <Level Km="0" />
+            <MeshCollection Id="Optimized"/>
+            <Waves>
+                <Count Value="64" />
+                <Length M="100" />
+                <Amplitude Value="0.05" />
+                <Speed Value="1.5" />
+                <LengthPersistence Value="0.93" />
+                <AmplitudePersistence Value="0.975" />
+                <SpeedPersistence Value="1.01" />
+            </Waves>
+            <Color R="0.0901711" G="0.2208759" B="0.31672597" />
+            <TransparencyDepth M="1000" />
+        </Ocean>
+        <Atmosphere>
+            <Visual>
+                <RayleighScattering>
+                    <Coefficients R="0.00705758097024072" G="0.005894684206252668" B="0.003929789369254173" />
+                    <ScaleHeight Km="11" />
+                </RayleighScattering>
+                <MieScattering>
+                    <Coefficients R="0.002309401186449168" G="0.002309401186449168" B="0.002309401186449168" />
+                    <ScaleHeight Km="6" />
+                    <PhaseFunctionAsymmetry X="0.6299999952316284" Y="0.699999988079071" Z="0.7300000190734863" />
+                    <AbsorptionMultiplier Value="7" />
+                </MieScattering>
+                <Ozone>
+                    <Coefficients R="0" G="0" B="0" />
+                    <Altitude Km="0" />
+                    <Extent Km="0" />
+                </Ozone>
+            </Visual>
+            <Physical>
+                <SeaLevelPressure Atm="0.006"/>
+                <SeaLevelDensity KgPerM3="0.02"/>
+                <ScaleHeight Km="11" />
+            </Physical>
+        </Atmosphere>
+        <MeanRadius Km="83.5" />
+        <Mass Zg="0.025" />
+        <Color R="1.0" G="0.2" B="0.1" />
+    </AtmosphericBody>
+
+    <TerrestrialBody Id="Eeloo" Parent="Sol">
+        <MeshCollection Id="Default"/>
+        <SemiMajorAxis Au="39.48" />
+        <Inclination Degrees="17.14175" />
+        <Eccentricity Value="0.2488" />
+        <LongitudeOfAscendingNode Degrees="110.30347" />
+        <ArgumentOfPeriapsis Degrees="113.76329" />
+        <MeanAnomalyAtEpoch Degrees="238.92881" />
+        <MeanRadius Km="1188.3" />
+        <Diffuse Path="Textures/KerbolSystem/ColorMaps/Eeloo_Color.dds" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Eeloo_Normal.png" Category="Terrain"/>
+        <Height Path="Textures/KerbolSystem/HeightMaps/Eeloo_Height.dds" Category="Terrain">
+            <Maximum Km="10"/>
+            <Minimum Km="0"/>
+        </Height>
+        <Mass Zg="13.03" />
+        <Color R="0.95" G="0.78" B="0.64" />
+    </TerrestrialBody>
+
+    <LoadFromLibrary Id="Earth" Parent="Sol"/>
+    <LoadFromLibrary Id="Luna" Parent="Earth"/>
+    
+    <LoadFromLibrary Id="Gemini7" Parent="Earth" />
+    
+    <LoadFromLibrary Id="Rocket" Parent="Kerbin" />
+
+</System>

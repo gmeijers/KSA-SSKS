@@ -1,0 +1,802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Assets>
+    <StellarBody Id="Sol">
+        <MeanRadius Km="696342" />
+        <Mass Suns="1" />
+        <Diffuse Path="Textures/Sol_Diffuse.jpg" Category="Terrain"/>
+        <Color R="1" G="1" B="1" />
+        <Sunlight R="9" G="9" B="9" />
+    </StellarBody>
+
+    <Vehicle Id="Gemini7" Parent="Earth">
+        <Canvas Id="Navball"/>
+        <Canvas Id="Altitude"/>
+        <Canvas Id="PitchYawRoll"/>
+        <Canvas Id="AutopilotSettings"/>
+        <Canvas Id="ThrustFuel"/>
+        <Canvas Id="ThrustDv"/>
+        
+        <Renderer>
+            <Mesh Id="GeminiCapsule"/>
+            <PbrMaterial Id="GeminiCapsuleMat"/>
+        </Renderer>
+        <Renderer>
+            <Mesh Id="GeminiBack"/>
+            <PbrMaterial Id="GeminiBackMat"/>
+        </Renderer>
+        <Renderer>
+            <Mesh Id="GeminiCap"/>
+            <PbrMaterial Id="GeminiCapMat"/>
+        </Renderer>
+
+        <Thruster Id="TranslateRight">
+            <Location X="0.000" Y="-1.150" Z="0.000" />
+            <ExhaustDirection X="0.000" Y="-1.000" Z="0.000" />
+            <ControlMap CSV="TranslateRight" />
+            <Thrust N="444" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="TranslateLeft">
+            <Location X="0.000" Y="1.150" Z="0.000" />
+            <ExhaustDirection X="0.000" Y="1.000" Z="0.000" />
+            <ControlMap CSV="TranslateLeft" />
+            <Thrust N="444" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="TranslateDown">
+            <Location X="0.000" Y="0.000" Z="-1.150" />
+            <ExhaustDirection X="0.000" Y="0.000" Z="-1.000" />
+            <ControlMap CSV="TranslateDown" />
+            <Thrust N="444" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="TranslateUp">
+            <Location X="0.000" Y="0.000" Z="1.150" />
+            <ExhaustDirection X="0.000" Y="0.000" Z="1.000" />
+            <ControlMap CSV="TranslateUp" />
+            <Thrust N="444" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="TranslateBackward">
+            <Location X="-0.150" Y="-1.180" Z="0.270" />
+            <ExhaustDirection X="1.000" Y="0.000" Z="0.000" />
+            <ControlMap CSV="TranslateBackward" />
+            <Thrust N="98" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="TranslateBackward2">
+            <Location X="-0.150" Y="1.180" Z="-0.270" />
+            <ExhaustDirection X="1.000" Y="0.000" Z="0.000" />
+            <ControlMap CSV="TranslateBackward" />
+            <Thrust N="98" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="TranslateForward1">
+            <Location X="-2.000" Y="0.000" Z="1.340" />
+            <ExhaustDirection X="-1.000" Y="0.000" Z="0.000" />
+            <ControlMap CSV="TranslateForward" />
+            <Thrust N="98" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="TranslateForward2">
+            <Location X="-2.000" Y="0.000" Z="-1.340" />
+            <ExhaustDirection X="-1.000" Y="0.000" Z="0.000" />
+            <ControlMap CSV="TranslateForward" />
+            <Thrust N="98" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="AttitudePitchDownRoll1">
+            <Location X="-1.950" Y="1.080" Z="1.000" />
+            <ExhaustDirection X="0.000" Y="0.000" Z="1.000" />
+            <ControlMap CSV="RollLeft,PitchDown" />
+            <Thrust N="98" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="AttitudePitchDownRoll2">
+            <Location X="-1.950" Y="-1.080" Z="1.000" />
+            <ExhaustDirection X="0.000" Y="0.000" Z="1.000" />
+            <ControlMap CSV="RollRight,PitchDown" />
+            <Thrust N="98" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="AttitudePitchUpRoll1">
+            <Location X="-1.950" Y="1.080" Z="-1.000" />
+            <ExhaustDirection X="0.000" Y="0.000" Z="-1.000" />
+            <ControlMap CSV="RollRight,PitchUp" />
+            <Thrust N="98" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="AttitudePitchUpRoll2">
+            <Location X="-1.950" Y="-1.080" Z="-1.000" />
+            <ExhaustDirection X="0.000" Y="0.000" Z="-1.000" />
+            <ControlMap CSV="RollLeft,PitchUp" />
+            <Thrust N="98" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="AttitudeYawLeft1">
+            <Location X="-1.950" Y="-1.000" Z="1.000" />
+            <ExhaustDirection X="0.000" Y="-1.000" Z="0.000" />
+            <ControlMap CSV="YawLeft" />
+            <Thrust N="98" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="AttitudeYawLeft2">
+            <Location X="-1.950" Y="-1.000" Z="-1.000" />
+            <ExhaustDirection X="0.000" Y="-1.000" Z="0.000" />
+            <ControlMap CSV="YawLeft" />
+            <Thrust N="98" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="AttitudeYawRight1">
+            <Location X="-1.950" Y="1.000" Z="1.000" />
+            <ExhaustDirection X="0.000" Y="1.000" Z="0.000" />
+            <ControlMap CSV="YawRight" />
+            <Thrust N="98" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="AttitudeYawRight2">
+            <Location X="-1.950" Y="1.000" Z="-1.000" />
+            <ExhaustDirection X="0.000" Y="1.000" Z="0.000" />
+            <ControlMap CSV="YawRight" />
+            <Thrust N="98" />
+            <SpecificImpulse Seconds="220" />
+            <MinimumPulseTime Seconds="0.008" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+
+        <SemiMajorAxis Km="6713" />
+        <Inclination Degrees="28.87" />
+        <Eccentricity Value="0.0077" />
+        <LongitudeOfAscendingNode Degrees="60.48" />
+        <ArgumentOfPeriapsis Degrees="0" />
+        <MeanAnomalyAtEpoch Degrees="25.5" />
+        <MeanRadius M="1.5" />
+        <MassSpecificPMI X="1.13" Y="2.83" Z="2.83" />
+        <Mass Kg="3396" />
+        <PropellantMass Kg="322" />
+        <Color R="0.33" G="0.95" B="0" />
+    </Vehicle>
+
+    <Vehicle Id="Rocket" Parent="Earth">
+        <Canvas Id="Navball"/>
+        <Canvas Id="Altitude"/>
+        <Canvas Id="PitchYawRoll"/>
+        <Canvas Id="AutopilotSettings"/>
+        <Canvas Id="ThrustFuel"/>
+        <Canvas Id="ThrustDv"/>
+
+        <Renderer>
+            <Mesh Id="ApolloCSM"/>
+            <PbrMaterial Id="Apollo1Mat"/>
+        </Renderer>
+        <Renderer>
+            <Mesh Id="ApolloCSMDetails"/>
+            <PbrMaterial Id="Apollo2Mat"/>
+        </Renderer>
+        <Thruster Id="A1">
+            <Location X="-0.050996" Y="-0.75996" Z="-1.9897" />
+            <ExhaustDirection X="0" Y="-0.9862856015" Z="0.1650476058" />
+            <ControlMap CSV="TranslateRight" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="A2">
+            <Location X="0.086911" Y="0.076093" Z="-2.1316" />
+            <ExhaustDirection X="0" Y="0.9862856015" Z="-0.1650476058" />
+            <ControlMap CSV="TranslateLeft" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="A3">
+            <Location X="0.54287" Y="-0.33984" Z="-2.0579" />
+            <ExhaustDirection X="1" Y="0" Z="0" />
+            <ControlMap CSV="PitchUp,TranslateBackward" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="A4">
+            <Location X="-0.48522" Y="-0.34182" Z="-2.0625" />
+            <ExhaustDirection X="-1" Y="0" Z="0" />
+            <ControlMap CSV="PitchDown,TranslateForward" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="B1">
+            <Location X="-0.049924" Y="1.9904" Z="-0.76327" />
+            <ExhaustDirection X="0" Y="-0.1650476058" Z="-0.9862856015" />
+            <ControlMap CSV="RollRight,TranslateDown" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="B2">
+            <Location X="0.082566" Y="2.1335" Z="0.072574" />
+            <ExhaustDirection X="0" Y="0.1650476058" Z="0.9862856015" />
+            <ControlMap CSV="RollLeft,TranslateUp" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="B3">
+            <Location X="0.54287" Y="2.0602" Z="-0.34516" />
+            <ExhaustDirection X="1" Y="0" Z="0" />
+            <ControlMap CSV="YawRight,TranslateBackward" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="B4">
+            <Location X="-0.48522" Y="2.0593" Z="-0.35366" />
+            <ExhaustDirection X="-1" Y="0" Z="0" />
+            <ControlMap CSV="YawLeft,TranslateForward" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="C1">
+            <Location X="-0.049923" Y="0.76343" Z="1.9904" />
+            <ExhaustDirection X="0" Y="0.9862856015" Z="-0.1650476058" />
+            <ControlMap CSV="TranslateLeft" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="C2">
+            <Location X="0.085189" Y="-0.072454" Z="2.1333" />
+            <ExhaustDirection X="0" Y="-0.9862856015" Z="0.1650476058" />
+            <ControlMap CSV="TranslateRight" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="C3">
+            <Location X="-0.48522" Y="0.34905" Z="2.067" />
+            <ExhaustDirection X="-1" Y="0" Z="0" />
+            <ControlMap CSV="PitchUp,TranslateForward" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="C4">
+            <Location X="0.54287" Y="0.34033" Z="2.0609" />
+            <ExhaustDirection X="1" Y="0" Z="0" />
+            <ControlMap CSV="PitchDown,TranslateBackward" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="D1">
+            <Location X="-0.052513" Y="-1.9879" Z="0.76268" />
+            <ExhaustDirection X="0" Y="0.1650476058" Z="0.9862856015" />
+            <ControlMap CSV="RollRight,TranslateUp" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="D2">
+            <Location X="0.088235" Y="-2.1314" Z="-0.0731" />
+            <ExhaustDirection X="0" Y="-0.1650476058" Z="-0.9862856015" />
+            <ControlMap CSV="RollLeft,TranslateDown" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="D3">
+            <Location X="-0.48521" Y="-2.0684" Z="0.34599" />
+            <ExhaustDirection X="-1" Y="0" Z="0" />
+            <ControlMap CSV="YawRight,TranslateForward" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Thruster Id="D4">
+            <Location X="0.54287" Y="-2.0627" Z="0.34602" />
+            <ExhaustDirection X="1" Y="0" Z="0" />
+            <ControlMap CSV="YawLeft,TranslateBackward" />
+            <Thrust N="490" />
+            <SpecificImpulse Seconds="312" />
+            <MinimumPulseTime Seconds="0.0054489795" />
+            <VolumetricExhaust Id="ApolloRCS" />
+            <SoundEvent Action="On" SoundId="DefaultRcsThruster"/>
+        </Thruster>
+        <Engine Id="AJ10-137">
+            <Location X="-6.5" Y="0.0" Z="0.0" />
+            <ExhaustDirection X="-1" Y="0" Z="0" />
+            <!-- Realistic values -->
+            <!-- <Thrust KN="43.7" /> -->
+            <!-- <SpecificImpulse Seconds="319" /> -->
+            <!-- <MinimumThrottle Value="1" /> -->
+            <Thrust N="3236194.5" />
+            <SpecificImpulse Seconds="100000" />
+            <MinimumThrottle Value="0.05" />
+            <VolumetricExhaust Id="ApolloCSM" />
+            <SoundEvent Action="On" SoundId="DefaultEngineMulti"/>
+        </Engine>
+        <SemiMajorAxis Km="6578" />
+        <Inclination Degrees="18.28" />
+        <Eccentricity Value="0" />
+        <LongitudeOfAscendingNode Degrees="90" />
+        <ArgumentOfPeriapsis Degrees="0" />
+        <MeanAnomalyAtEpoch Degrees="63" />
+        <MeanRadius M="20" />
+        <MassSpecificPMI X="2.409102" Y="6.951899552083333" Z="6.951899552083333" />
+        <Mass Kg="6110" />
+        <PropellantMass Kg="18410" />
+        <Color R="0.33" G="0.95" B="0" />
+        <SoundEvent Action="Rcs" SoundId="DefaultRcsThruster"/>
+    </Vehicle>
+
+    <AtmosphericBody Id="Earth" Parent="Sol">
+        <MeshCollection Id="Default"/>
+        <SemiMajorAxis Au="1000" />
+        <Inclination Degrees="0.00005" />
+        <Eccentricity Value="0.0167" />
+        <LongitudeOfAscendingNode Degrees="-11.261" />
+        <ArgumentOfPeriapsis Degrees="114.207" />
+        <Diffuse Path="Textures/Earth_Diffuse.dds" Category="Terrain"/>
+        <Normal Path="Textures/Earth_Normal.dds" Category="Terrain"/>
+        <Height Path="Textures/Earth_Height_bathymetry.dds" Category="Terrain">
+            <Maximum Km="20"/>
+            <Minimum Km="-20"/>
+        </Height>
+        <MeanAnomalyAtEpoch Degrees="100" />
+        <MeanRadius Km="6371" />
+        <Mass Earths="1" />
+        <Color R="0.11" G="0.31" B="0.415" />
+        <Period Days="1"/>
+        <AxialTilt Degrees="23.44" />
+        <AxialAlignment Degrees="0" />
+    </AtmosphericBody>
+
+    <TerrestrialBody Id="Luna" Parent="Earth">
+        <MeshCollection Id="Default"/>
+        <SemiMajorAxis Km="384400" />
+        <Inclination Degrees="18.28" />
+        <Eccentricity Value="0.0549" />
+        <LongitudeOfAscendingNode Degrees="90" />
+        <ArgumentOfPeriapsis Degrees="318.15" />
+        <Color R="0.33" G="0.33" B="0.33" /> <!-- used for the sprite and planetshine -->
+        <Diffuse Path="Textures/Luna_Diffuse.dds" Category="Terrain"/>
+        <Normal Path="Textures/Luna_Normal.dds" Category="Terrain"/>
+        <Height Path="Textures/Luna_Height.png" Category="Terrain">
+            <Maximum Km="40"/>
+        </Height>
+        <Terrain>
+            <!-- In progress... -->
+            <BiomeIDMap Path="Textures/Luna_Biome_ID.png" Category="Terrain"/>
+            <BiomeControlMap Path="Textures/Luna_Biome_Control.png" Category="Terrain"/>
+
+            <!-- Global Procedural Modifiers -->
+            <ProceduralModifiers>
+
+                <Modifier Type="Simplex" Name="SmallPerturbations">
+                    <Frequency Value="250" />
+                    <Lacunarity Value="2.0" />
+                    <Persistence Value="0.5" />
+                    <Amplitude Value="0.1" />
+                    <AmplitudeHeightCurve>
+                        <SplinePoint>
+                            <Key Value="0.0" />
+                            <Value Value="0.5" />
+                            <InTangent Value="1.0" />
+                            <OutTangent Value="1.0" />
+                        </SplinePoint>
+                        <SplinePoint>
+                            <Key Value="1.0" />
+                            <Value Value="1.0" />
+                            <InTangent Value="1.0" />
+                            <OutTangent Value="1.0" />
+                        </SplinePoint>
+                    </AmplitudeHeightCurve>
+                    <Seed Value="1" />
+                    <Octaves Value="8" />
+                    <Order Value="0" />
+                </Modifier>
+
+                <Modifier Type="Decal" Name="TestDecal">
+                    <Frequency Value="250" />
+                    <Amplitude Value="0.2" />
+                    <Seed Value="1" />
+                    <Order Value="9999" />
+
+                    <Radius Value="100" />
+                    <Rotation Degrees="0" />
+                    <Location Id = "TestLocation">
+                        <Latitude Degrees="0.0" />
+                        <Longitude Degrees="0.0" />
+                    </Location>
+
+                    <AltitudeOffset Km="0" />
+                    <SmoothFactor Value="0.5" />
+                    <Additive Value="true" />
+
+                    <HeightMap Id="LunaTestDecalHeight" Path="Textures/Planets/Luna/TestDecalHeight.png" Category="Terrain"/>
+                </Modifier>
+
+                <!-- more modifiers here -->
+                
+            </ProceduralModifiers>
+
+            <BiomeMaterials>
+                <!-- Define any properties such as biome blending strength here -->
+                <!-- Order matters! The order these appear corresponds to the ID in the ID map, starting from 0 -->
+
+                <BlendStrength Value="2.25" />
+                <!-- Base terrain -->
+                <BiomeMaterial Name="Surface">
+
+                    <SlopeBlendStrength Value="15.0" />
+                    <SlopeBlendContrast Value="2.0" />
+                    <SlopeBlendBias Value="0.00" />
+
+                    <GroundMaterial>
+                        <Diffuse Id="LunaGroundDiffuse" Path="Textures/Planets/Luna/Main/Luna_Albedo.dds" Category="Terrain"/>
+                        <Normal Id="LunaGroundNormal" Path="Textures/Planets/Luna/Main/Luna_Normal.dds" Category="Terrain"/>
+                        <RoughMetalAo Id="LunaGroundRoughSpecAO" Path="Textures/Planets/Luna/Main/Luna_RoughSpecAO.dds" Category="Terrain"/>
+                        <Displacement Id="LunaGroundDisplacement" Path="Textures/Planets/Luna/Main/Luna_Displacement.png" Category="Terrain"/>
+                        <Height Id="LunaTilingDetail" Path="Textures/Luna_Noise.png" Category="Terrain"/>
+
+                        <TextureTiling Value="17.0" />
+                        <HeightTiling Value="0.0155" />
+
+                        <HeightDeformity Value="0.3" />
+
+                        <DiffuseScale Value="1.0" />
+                        <NormalScale Value="1.0" />
+                        <DisplacementScale Value="0.8" />
+
+                    </GroundMaterial>
+
+                    <SlopeMaterial>
+                        <Diffuse Id="LunaCliffsDiffuse" Path="Textures/Planets/Luna/Cliffs/Luna_Cliffs_Albedo.dds" Category="Terrain"/>
+                        <Normal Id="LunaCliffsNormal" Path="Textures/Planets/Luna/Cliffs/Luna_Cliffs_Normal.dds" Category="Terrain"/>
+                        <RoughMetalAo Id="LunaCliffsRoughSpecAO" Path="Textures/Planets/Luna/Cliffs/Luna_Cliffs_RoughSpecAO.dds" Category="Terrain"/>
+                        <Displacement Id="LunaCliffsDisplacement" Path="Textures/Planets/Luna/Cliffs/Luna_Cliffs_Displacement.png" Category="Terrain"/>
+                        <Height Id="LunaTilingDetail" Path="Textures/Luna_Noise.png" Category="Terrain"/>
+
+                        <TextureTiling Value="17.0" />
+                        <HeightTiling Value="0.0000155" />
+
+                        <HeightDeformity Value="0.3" />
+
+                        <DiffuseScale Value="1.0" />
+                        <NormalScale Value="1.0" />
+                        <DisplacementScale Value="2.5" />
+                    </SlopeMaterial>
+
+                    
+
+                <!-- more modifiers here -->
+
+                </BiomeMaterial>
+
+                <!-- Craters -->
+                <BiomeMaterial Name="Craters">
+
+                    <SlopeBlendStrength Value="15.0" />
+                    <SlopeBlendContrast Value="2.0" />
+                    <SlopeBlendBias Value="0.00" />
+
+                    <GroundMaterial>
+                        <Diffuse Id="LunaGroundDiffuse3" Path="Textures/Planets/Luna/Craters/Luna_Craters_Albedo.dds" Category="Terrain"/>
+                        <Normal Id="LunaGroundNormal3" Path="Textures/Planets/Luna/Craters/Luna_Craters_Normal.dds" Category="Terrain"/>
+                        <RoughMetalAo Id="LunaGroundRoughSpecAO3" Path="Textures/Planets/Luna/Craters/Luna_Craters_RoughSpecAO.dds" Category="Terrain"/>
+                        <Displacement Id="LunaGroundDisplacement3" Path="Textures/Planets/Luna/Craters/Luna_Craters_Displacement.png" Category="Terrain"/>
+                        <Height Id="Grey" Path="Textures/Planets/EmptyGrey.png" Category="Terrain"/>
+
+                        <TextureTiling Value="17.0" />
+
+                        <DiffuseScale Value="1.0" />
+                        <NormalScale Value="1.0" />
+                        <DisplacementScale Value="0.8" />
+                    </GroundMaterial>
+
+                    <SlopeMaterial>
+                        <Diffuse Id="LunaCliffsDiffuse" />
+                        <Normal Id="LunaCliffsNormal" />
+                        <RoughMetalAo Id="LunaCliffsRoughSpecAO" />
+                        <Displacement Id="LunaCliffsDisplacement" />
+                        <Height Id="Grey" Path="Textures/Planets/EmptyGrey.png" Category="Terrain"/>
+
+                        <TextureTiling Value="17.0" />
+
+                        <DiffuseScale Value="1.0" />
+                        <NormalScale Value="1.0" />
+                        <DisplacementScale Value="2.5" />
+                    </SlopeMaterial>
+
+                </BiomeMaterial>
+
+                <!-- Maria -->
+                <BiomeMaterial Name="Maria">
+
+                    <SlopeBlendStrength Value="15.0" />
+                    <SlopeBlendContrast Value="2.0" />
+                    <SlopeBlendBias Value="0.00" />
+
+                    <GroundMaterial>
+                        <Diffuse Id="LunaGroundDiffuse5" Path="Textures/Planets/Luna/Maria/Luna_Maria_Albedo.dds" Category="Terrain"/>
+                        <Normal Id="LunaGroundNormal5" Path="Textures/Planets/Luna/Maria/Luna_Maria_Normal.dds" Category="Terrain"/>
+                        <RoughMetalAo Id="LunaGroundRoughSpecAO5" Path="Textures/Planets/Luna/Maria/Luna_Maria_RoughSpecAO.dds" Category="Terrain"/>
+                        <Displacement Id="LunaGroundDisplacement5" Path="Textures/Planets/Luna/Maria/Luna_Maria_Displacement.png" Category="Terrain"/>
+                        <Height Id="Grey" Path="Textures/Planets/EmptyGrey.png" Category="Terrain"/>
+
+                        <TextureTiling Value="17.0" />
+
+                        <DiffuseScale Value="1.0" />
+                        <NormalScale Value="1.0" />
+                        <DisplacementScale Value="0.95" />
+                    </GroundMaterial>
+
+                    <SlopeMaterial>
+                        <Diffuse Id="LunaCliffsDiffuse" />
+                        <Normal Id="LunaCliffsNormal" />
+                        <RoughMetalAo Id="LunaCliffsRoughSpecAO" />
+                        <Displacement Id="LunaCliffsDisplacement" />
+                        <Height Id="Grey" Path="Textures/Planets/EmptyGrey.png" Category="Terrain"/>
+
+                        <TextureTiling Value="17.0" />
+
+                        <DiffuseScale Value="1.0" />
+                        <NormalScale Value="1.0" />
+                        <DisplacementScale Value="2.5" />
+                    </SlopeMaterial>
+
+                    <ProceduralModifiers>
+
+                        <Modifier Type="HybridMultifractal" Name="MariaNoise">
+                            <Frequency Value="100.0" />
+                            <Lacunarity Value="2.0" />
+                            <Persistence Value="0.93" />
+                            <Offset Value="0.698" />
+                            <Amplitude Value="0.09" />
+                            <Seed Value="1" />
+                            <Octaves Value="7" />
+                            <Order Value="0" />
+                        </Modifier>
+
+                    <!-- more modifiers here -->
+                
+                    </ProceduralModifiers>
+
+                </BiomeMaterial>
+
+            </BiomeMaterials>
+
+        </Terrain>
+
+        <!-- Ground Clutter - Please keep this, it's just commented out for everyone for now -->
+        <!-- <GroundClutter>
+            <Group Id="Rocks">
+                <ObjectSeparation M="500" /> 
+                <GenerationRange M="10000" />
+            
+                <ClutterObject Name="RockType1">
+                    
+                </ClutterObject>
+            </Group>
+        </GroundClutter>
+        -->
+        <MeanAnomalyAtEpoch Degrees="0" />
+        <MeanRadius Km="1737.1" />
+        <Mass Lunars="1" />
+        <Period Days="27" Hours="7" Minutes="12"/>
+        <AxialTilt Degrees="6.68" />
+        <AxialAlignment Degrees="0" />
+        <Landmark Id="Apollo11">
+            <Latitude Degrees="0.67408" />
+            <Longitude Degrees="23.47297" />
+        </Landmark>
+        <Landmark Id="Apollo12">
+            <Latitude Degrees="-3.01239" />
+            <Longitude Degrees="-23.42157" />
+        </Landmark>
+        <Landmark Id="Apollo14">
+            <Latitude Degrees="-3.64530" />
+            <Longitude Degrees="-17.47136" />
+        </Landmark>
+        <Landmark Id="Apollo15">
+            <Latitude Degrees="26.13222" />
+            <Longitude Degrees="3.63397" />
+        </Landmark>
+        <Crater Id="Tycho">
+            <Latitude Degrees="-43.37" />
+            <Longitude Degrees="-11.16" />
+        </Crater>
+        <Crater Id="Copernicus">
+            <Latitude Degrees="9.68" />
+            <Longitude Degrees="-20.05" />
+        </Crater>
+        <Crater Id="Aristarchus">
+            <Latitude Degrees="23.7" />
+            <Longitude Degrees="-47.4" />
+        </Crater>
+        <Crater Id="Plato">
+            <Latitude Degrees="51.6" />
+            <Longitude Degrees="-9.4" />
+        </Crater>
+        <Crater Id="Archimedes">
+            <Latitude Degrees="29.7" />
+            <Longitude Degrees="-4.0" />
+        </Crater>
+        <Crater Id="Grimaldi">
+            <Latitude Degrees="-5.5" />
+            <Longitude Degrees="-68.6" />
+        </Crater>
+        <Crater Id="Ptolemaeus">
+            <Latitude Degrees="-9.4" />
+            <Longitude Degrees="-1.4" />
+        </Crater>
+        <Crater Id="Eratosthenes">
+            <Latitude Degrees="14.5" />
+            <Longitude Degrees="-11.3" />
+        </Crater>
+        <Crater Id="Gassendi">
+            <Latitude Degrees="-17.5" />
+            <Longitude Degrees="40.1" />
+        </Crater>
+        <Crater Id="Schickard">
+            <Latitude Degrees="-44.1" />
+            <Longitude Degrees="-55.0" />
+        </Crater>
+        <Crater Id="Clavius">
+            <Latitude Degrees="-58.8" />
+            <Longitude Degrees="-14.9" />
+        </Crater>
+        <Crater Id="Langrenus">
+            <Latitude Degrees="-8.9" />
+            <Longitude Degrees="60.2" />
+        </Crater>
+        <Crater Id="Petavius">
+            <Latitude Degrees="-25.0" />
+            <Longitude Degrees="60.4" />
+        </Crater>
+        <Crater Id="RupesAltai">
+            <Latitude Degrees="22.8" />
+            <Longitude Degrees="4.0" />
+        </Crater>
+    </TerrestrialBody>
+
+
+    <Comet Id="MakemakeComet" Parent="Sol">
+        <SemiMajorAxis Au="45.79" />
+        <Inclination Degrees="28.98" />
+        <Eccentricity Value="0.159" />
+        <LongitudeOfAscendingNode Degrees="79.35" />
+        <ArgumentOfPeriapsis Degrees="294.88" />
+        <MeanAnomalyAtEpoch Degrees="160.6" />
+        <MeanRadius Km="739" />
+    </Comet>
+
+    <Comet Id="HalleysComet" Parent="Sol">
+        <SemiMajorAxis Au="17.737" />
+        <Inclination Degrees="161.96" />
+        <Eccentricity Value="0.96658" />
+        <LongitudeOfAscendingNode Degrees="59.396" />
+        <ArgumentOfPeriapsis Degrees="112.05" />
+        <MeanAnomalyAtEpoch Degrees="58.42" />
+        <MeanRadius Km="11" />
+    </Comet>
+
+    <Comet Id="LovejoyComet" Parent="Sol">
+        <SemiMajorAxis Au="78.68" />
+        <Inclination Degrees="134.2" />
+        <Eccentricity Value="0.99993" />
+        <LongitudeOfAscendingNode Degrees="326.369" />
+        <ArgumentOfPeriapsis Degrees="53.5092" />
+        <MeanAnomalyAtEpoch Degrees="-0.1" />
+        <MeanRadius Km="0.5" />
+    </Comet>
+
+    <Comet Id="HaleBoppComet" Parent="Sol">
+        <SemiMajorAxis Au="186" />
+        <Inclination Degrees="89.43" />
+        <Eccentricity Value="0.995" />
+        <LongitudeOfAscendingNode Degrees="282.47" />
+        <ArgumentOfPeriapsis Degrees="130.59" />
+        <MeanAnomalyAtEpoch Degrees="130.59" />
+        <MeanRadius Km="30" />
+    </Comet>
+
+    <Comet Id="Borisov" Parent="Sol">
+        <Periapsis Au="2.006"/>
+        <Inclination Degrees="44.0535" />
+        <Eccentricity Value="3.357" />
+        <LongitudeOfAscendingNode Degrees="308.15" />
+        <ArgumentOfPeriapsis Degrees="209.1244" />
+        <TimeAtPeriapsis Months="-1"/>
+        <MeanRadius Km="0.5" />
+    </Comet>
+
+    <Comet Id="3I_ATLAS" Parent="Sol">
+        <Periapsis Au="1.3746" />
+        <Inclination Degrees="175.1167" />
+        <Eccentricity Value="6.2769" />
+        <LongitudeOfAscendingNode Degrees="322.2722" />
+        <ArgumentOfPeriapsis Degrees="127.7932" />
+        <TimeAtPeriapsis Days="118.21095" />
+        <MeanRadius Km="0.5" />
+        <Color R="0.4" G="0.8" B="1.0" />
+    </Comet>
+
+</Assets>
