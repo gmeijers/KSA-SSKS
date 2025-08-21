@@ -1,7 +1,7 @@
 # Kitten Space Agency – Sol Scale Kerbol System
 
 This is my very first mod for **Kitten Space Agency**.  
-It replaces the default Solar System with the **Kerbol System** from Kerbal Space Program – but scaled to **our (Sol) scale**.  
+It replaces the default Solar System with the **Kerbol System** from Kerbal Space Program – but scaled to our (Sol) scale.  
 
 Everyone is free to use, modify, or build upon this project however they please.
 
@@ -11,10 +11,17 @@ Everyone is free to use, modify, or build upon this project however they please.
 
 ⚠️ **Important:** Make a backup first!
 
-1. Copy all files from this mod into the **main directory** of Kitten Space Agency.
-2. Launch the game and enjoy exploring the Kerbol System at Sol scale!
+1. Make a backup of mod.toml in case you want to uninstall this mod.
+2. Copy all files from this mod into the **main directory** of Kitten Space Agency.
+3. Launch the game and enjoy exploring the Kerbol System at Sol scale!
 
 ---
+
+## Updates
+
+- Fixed height maps
+- Gave Laythe a nicer atmosphere
+- Kerbin now looks weird from orbit but I kind of like it
 
 ## Notes
 
@@ -30,10 +37,6 @@ Everyone is free to use, modify, or build upon this project however they please.
 
 All textures come from https://github.com/Kopernicus/kittopia-dumps.
 
-## Disclaimer
-
-This mod is provided *as-is* with no guarantees.  
-Back up your files before installing!  
 
 ---
 

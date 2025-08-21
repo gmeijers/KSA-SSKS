@@ -46,9 +46,9 @@
         <MeanAnomalyAtEpoch Degrees="252.25084" />
         <MeanRadius Km="2439.7" />
         <Diffuse Path="Textures/KerbolSystem/ColorMaps/Moho_Color.dds" Category="Terrain"/>
-        <Normal Path="Textures/KerbolSystem/NormalMaps/Moho_Normal.png" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Moho_Normal.dds" Category="Terrain"/>
         <Height Path="Textures/KerbolSystem/HeightMaps/Moho_Height.dds" Category="Terrain">
-            <Maximum Km="20"/>
+            <Maximum Km="60"/>
             <Maximum Km="0"/>
         </Height>
         <Mass Zg="330.11" />
@@ -66,7 +66,7 @@
         <MeanAnomalyAtEpoch Degrees="181.97973" />
         <MeanRadius Km="6051.8" />
         <Diffuse Id="EveDiffuse" Path="Textures/KerbolSystem/ColorMaps/Eve_Color.dds" Category="Terrain"/>
-        <Normal Path="Textures/KerbolSystem/NormalMaps/Eve_Normal.png" Power="0.2" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Eve_Normal.dds" Category="Terrain"/>
         <Height Path="Textures/KerbolSystem/HeightMaps/Eve_Height.dds" Category="Terrain">
             <Maximum Km="40"/>
             <Minimum Km="-2"/>
@@ -118,6 +118,7 @@
         </Atmosphere>
     </AtmosphericBody>
     <TerrestrialBody Id="Gilly" Parent="Eve">
+        <MeshCollection Id="Default"/>
         <SemiMajorAxis Km="23463.2" />
         <Inclination Degrees="1.788" />
         <Eccentricity Value="0.00033" />
@@ -126,9 +127,9 @@
         <MeanAnomalyAtEpoch Degrees="53.23" />
         <MeanRadius Km="6.2" />
         <Diffuse Id="GillyDiffuse" Path="Textures/KerbolSystem/ColorMaps/Gilly_Color.dds" Category="Terrain"/>
-        <Normal Path="Textures/KerbolSystem/NormalMaps/Gilly_Normal.png" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Gilly_Normal.dds" Category="Terrain"/>
         <Height Path="Textures/KerbolSystem/HeightMaps/Gilly_Height.dds" Category="Terrain">
-            <Maximum Km="63"/>
+            <Maximum Km="6"/>
             <Minimum Km="0"/>
         </Height>
         <Mass Pg="1.4762" />
@@ -142,9 +143,9 @@
         <LongitudeOfAscendingNode Degrees="-11.261" />
         <ArgumentOfPeriapsis Degrees="114.207" />
         <Diffuse Path="Textures/KerbolSystem/ColorMaps/Kerbin_Color.dds" Category="Terrain"/>
-        <Normal Path="Textures/KerbolSystem/NormalMaps/Kerbin_Normal.png" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Kerbin_Normal.dds" Category="Terrain"/>
         <Height Path="Textures/KerbolSystem/HeightMaps/Kerbin_Height.dds" Category="Terrain">
-            <Maximum Km="40"/>
+            <Maximum Km="10"/>
             <Minimum Km="-.1"/>
         </Height>
 
@@ -478,9 +479,9 @@
         <LongitudeOfAscendingNode Degrees="90" />
         <ArgumentOfPeriapsis Degrees="318.15" />
         <Diffuse Path="Textures/KerbolSystem/ColorMaps/Mun_Color.dds" Category="Terrain"/>
-        <Normal Path="Textures/KerbolSystem/NormalMaps/Mun_Normal.png" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Mun_Normal.dds" Category="Terrain"/>
         <Height Path="Textures/KerbolSystem/HeightMaps/Mun_Height.dds" Category="Terrain">
-            <Maximum Km="40"/>
+            <Maximum Km="80"/>
             <Minimum Km="0"/>
         </Height>
         <MeanAnomalyAtEpoch Degrees="0" />
@@ -500,7 +501,7 @@
         <Diffuse Path="Textures/KerbolSystem/ColorMaps/Minmus_Color.dds" Category="Terrain"/>
         <Normal Path="Textures/KerbolSystem/NormalMaps/Minmus_Normal.dds" Category="Terrain"/>
         <Height Path="Textures/KerbolSystem/HeightMaps/Minmus_Height.dds" Category="Terrain">
-            <Maximum Km="50"/>
+            <Maximum Km="40"/>
             <Minimum Km="0"/>
         </Height>
         <MeanAnomalyAtEpoch Degrees="0" />
@@ -520,9 +521,9 @@
         <LongitudeOfAscendingNode Degrees="49.558" />
         <ArgumentOfPeriapsis Degrees="286.537" />
         <Diffuse Path="Textures/KerbolSystem/ColorMaps/Duna_Color.dds" Category="Terrain"/>
-        <Normal Path="Textures/KerbolSystem/NormalMaps/Duna_Normal.png" Power="0.1" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Duna_Normal.dds" Power="0.1" Category="Terrain"/>
         <Height Path="Textures/KerbolSystem/HeightMaps/Duna_Height.dds" Category="Terrain">
-            <Maximum Km="50"/>
+            <Maximum Km="100"/>
             <Minimum Km="0"/>
         </Height>
         <MeanAnomalyAtEpoch Degrees="355.453" />
@@ -703,30 +704,32 @@
         
     </AtmosphericBody>
     <TerrestrialBody Id="Ike" Parent="Duna">
-        <SemiMajorAxis Km="9377" />
+        <MeshCollection Id="Default"/>
+        <SemiMajorAxis Km="14377" />
         <Inclination Degrees="1.093" />
         <Eccentricity Value="0.0151" />
         <LongitudeOfAscendingNode Degrees="48.331" />
         <ArgumentOfPeriapsis Degrees="150.057" />
         <Diffuse Path="Textures/KerbolSystem/ColorMaps/Ike_Color.dds" Category="Terrain"/>
-        <Normal Path="Textures/KerbolSystem/NormalMaps/Ike_Normal.png" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Ike_Normal.dds" Category="Terrain"/>
         <Height Path="Textures/KerbolSystem/HeightMaps/Ike_Height.dds" Category="Terrain">
-            <Maximum Km="20"/>
+            <Maximum Km="40"/>
             <Minimum Km="0"/>
         </Height>
         <MeanAnomalyAtEpoch Degrees="15.0" />
-        <MeanRadius Km="11.267" />
+        <MeanRadius Km="214.7" />
         <Mass Pg="10.659" />
     </TerrestrialBody>
 
     <TerrestrialBody Id="Some rock idk" Parent="Kerbol">
+        <MeshCollection Id="Default"/>
         <SemiMajorAxis Au="2.769" />
         <Inclination Degrees="10.594" />
         <Eccentricity Value="0.0758" />
         <LongitudeOfAscendingNode Degrees="80.3056" />
         <ArgumentOfPeriapsis Degrees="73.5977" />
         <Diffuse Path="Textures/KerbolSystem/ColorMaps/Dres_Color.dds" Category="Terrain"/>
-        <Normal Path="Textures/KerbolSystem/NormalMaps/Dres_Normal.png" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Dres_Normal.dds" Category="Terrain"/>
         <Height Path="Textures/KerbolSystem/HeightMaps/Dres_Height.dds" Category="Terrain">
             <Maximum Km="20"/>
             <Minimum Km="0"/>
@@ -784,13 +787,11 @@
         <Eccentricity Value="0.0041" />
         <LongitudeOfAscendingNode Degrees="355.8" />
         <ArgumentOfPeriapsis Degrees="84.129" />
-        <Diffuse Path="Textures/Io_Diffuse.jpg" Category="Terrain"/>
-        <Height Path="Textures/Io_Height.jpg" Category="Terrain"/>
         <MeanAnomalyAtEpoch Degrees="355.8" />
         <Diffuse Path="Textures/KerbolSystem/ColorMaps/Pol_Color.dds" Category="Terrain"/>
-        <Normal Path="Textures/KerbolSystem/NormalMaps/Pol_Normal.png" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Pol_Normal.dds" Category="Terrain"/>
         <Height Path="Textures/KerbolSystem/HeightMaps/Pol_Height.dds" Category="Terrain">
-            <Maximum Km="6"/>
+            <Maximum Km="100"/>
             <Minimum Km="0"/>
         </Height>
         <MeanRadius Km="1821.6" />
@@ -798,6 +799,7 @@
         <Period Days="1" Hours="18" Minutes="27" Seconds="21"/>
     </TerrestrialBody>
     <TerrestrialBody Id="Vall" Parent="Jool">
+        <MeshCollection Id="Default"/>
         <SemiMajorAxis Km="671100" />
         <Inclination Degrees="0.466" />
         <Eccentricity Value="0.0094" />
@@ -805,7 +807,7 @@
         <ArgumentOfPeriapsis Degrees="219.106" />
         <MeanAnomalyAtEpoch Degrees="181.4" />
         <Diffuse Path="Textures/KerbolSystem/ColorMaps/Vall_Color.dds" Category="Terrain"/>
-        <Normal Path="Textures/KerbolSystem/NormalMaps/Vall_Normal.png" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Vall_Normal.dds" Category="Terrain"/>
         <Height Path="Textures/KerbolSystem/HeightMaps/Vall_Height.dds" Category="Terrain">
             <Maximum Km="60"/>
             <Minimum Km="0"/>
@@ -817,15 +819,16 @@
         <AxialAlignment Degrees="0" />
     </TerrestrialBody>
     <TerrestrialBody Id="Tylo" Parent="Jool">
+        <MeshCollection Id="Default"/>
         <SemiMajorAxis Km="1070400" />
         <Inclination Degrees="0.177" />
         <Eccentricity Value="0.0015" />
         <LongitudeOfAscendingNode Degrees="52.2" />
         <ArgumentOfPeriapsis Degrees="63.552" />
         <Diffuse Id="TyloDiffuse" Path="Textures/KerbolSystem/ColorMaps/Tylo_Color.dds" Category="Terrain"/>
-        <Normal Path="Textures/KerbolSystem/NormalMaps/Tylo_Normal.png" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Tylo_Normal.dds" Category="Terrain"/>
         <Height Path="Textures/KerbolSystem/HeightMaps/Tylo_Height.dds" Category="Terrain">
-            <Maximum Km="10"/>
+            <Maximum Km="50"/>
             <Minimum Km="0"/>
         </Height>
         <MeanAnomalyAtEpoch Degrees="52.2" />
@@ -834,6 +837,7 @@
         <Period Days="7" Hours="3" Minutes="43" Seconds="12"/>
     </TerrestrialBody>
     <TerrestrialBody Id="Bop" Parent="Jool">
+        <MeshCollection Id="Default"/>
         <SemiMajorAxis Km="1882700" />
         <Inclination Degrees="0.192" />
         <Eccentricity Value="0.0074" />
@@ -841,16 +845,18 @@
         <ArgumentOfPeriapsis Degrees="298.848" />
         <MeanAnomalyAtEpoch Degrees="21.6" />
         <Diffuse Id="BopDiffuse" Path="Textures/KerbolSystem/ColorMaps/Bop_Color.dds" Category="Terrain"/>
-        <Normal Path="Textures/KerbolSystem/NormalMaps/Bop_Normal.png" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Bop_Normal.dds" Category="Terrain"/>
         <Height Path="Textures/KerbolSystem/HeightMaps/Bop_Height.dds" Category="Terrain">
-            <Maximum Km="80"/>
+            <Maximum Km="1000"/>
             <Minimum Km="0"/>
         </Height>
         <MeanRadius Km="2410.3" />
         <Mass Zg="107.6" />
         <Period Days="16" Hours="16" Minutes="32" Seconds="10"/>
     </TerrestrialBody>
+
     <AtmosphericBody Id="Laythe" Parent="Jool">
+        <MeshCollection Id="Default"/>
         <SemiMajorAxis Km="181400" />
         <Inclination Degrees="0.374" />
         <Eccentricity Value="0.0032" />
@@ -858,9 +864,9 @@
         <ArgumentOfPeriapsis Degrees="54.1" />
         <MeanAnomalyAtEpoch Degrees="141.6" />
         <Diffuse Id="LaytheDiffuse" Path="Textures/KerbolSystem/ColorMaps/Laythe_Color.dds" Category="Terrain"/>
-        <Normal Path="Textures/KerbolSystem/NormalMaps/Laythe_Normal.png" Power="0.4" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Laythe_Normal.dds" Power="0.4" Category="Terrain"/>
         <Height Path="Textures/KerbolSystem/HeightMaps/Laythe_Height.dds" Category="Terrain">
-            <Maximum Km="10"/>
+            <Maximum Km="2"/>
             <Minimum Km="-0.05"/>
         </Height>
         <Ocean>
@@ -881,19 +887,19 @@
         <Atmosphere>
             <Visual>
                 <RayleighScattering>
-                    <Coefficients R="0.00705758097024072" G="0.005894684206252668" B="0.003929789369254173" />
-                    <ScaleHeight Km="11" />
+                <Coefficients R="0.005470675107747125" G="0.006237619975858476" B="0.006654804200199148" />
+                <ScaleHeight Km="4" />
                 </RayleighScattering>
                 <MieScattering>
-                    <Coefficients R="0.002309401186449168" G="0.002309401186449168" B="0.002309401186449168" />
-                    <ScaleHeight Km="6" />
-                    <PhaseFunctionAsymmetry X="0.6299999952316284" Y="0.699999988079071" Z="0.7300000190734863" />
-                    <AbsorptionMultiplier Value="7" />
+                <Coefficients R="0.0006860095588364505" G="0.0015800712859105612" B="0.0007496438978536399" />
+                <ScaleHeight Km="6" />
+                <PhaseFunctionAsymmetry X="0.6299999952316284" Y="0.699999988079071" Z="0.7300000190734863" />
+                <AbsorptionMultiplier Value="1" />
                 </MieScattering>
                 <Ozone>
-                    <Coefficients R="0" G="0" B="0" />
-                    <Altitude Km="0" />
-                    <Extent Km="0" />
+                <Coefficients R="0" G="0" B="0" />
+                <Altitude Km="0" />
+                <Extent Km="0" />
                 </Ozone>
             </Visual>
             <Physical>
@@ -917,9 +923,9 @@
         <MeanAnomalyAtEpoch Degrees="238.92881" />
         <MeanRadius Km="1188.3" />
         <Diffuse Path="Textures/KerbolSystem/ColorMaps/Eeloo_Color.dds" Category="Terrain"/>
-        <Normal Path="Textures/KerbolSystem/NormalMaps/Eeloo_Normal.png" Category="Terrain"/>
+        <Normal Path="Textures/KerbolSystem/NormalMaps/Eeloo_Normal.dds" Category="Terrain"/>
         <Height Path="Textures/KerbolSystem/HeightMaps/Eeloo_Height.dds" Category="Terrain">
-            <Maximum Km="10"/>
+            <Maximum Km="50"/>
             <Minimum Km="0"/>
         </Height>
         <Mass Zg="13.03" />
