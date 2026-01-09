@@ -1,5 +1,8 @@
 # Kitten Space Agency – Sol Scale Kerbol System
 
+> [!NOTE]
+> Very much deprecated. You probably want to use [KSP-Redux](https://github.com/PlazmaBoltz/KSP-Redux)
+
 This is my very first mod for **Kitten Space Agency**.  
 It replaces the default Solar System with the **Kerbol System** from Kerbal Space Program – but scaled to our (Sol) scale.  
 
